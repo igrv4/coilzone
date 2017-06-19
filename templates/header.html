@@ -1,0 +1,69 @@
+<header class="header">
+    <div class="container_head">
+        <div class="logo">
+            <a href="/" class="href_logo">
+                <div class="logotext">Coil</div>
+                <div class="logotext">Zone</div>
+            </a>
+        </div>
+        <div class="header_menu">
+            <ul class="menu"> {# click странница в данный момент #}
+                <li class="menu_item">
+                    <a href="/" class="menu_link">
+                        <span>
+                            Главная
+                        </span>
+                    </a>
+                </li>
+                <li class="menu_item ">
+                    <a href="/products" class="menu_link">
+                        <span>
+                            Товары
+                        </span>
+                    </a>
+                </li>
+                <li class="menu_item">
+                    <a href="#" class="menu_link">
+                        <span>Расчет спиралей</span>
+                    </a>
+                </li>
+                <li class="menu_item">
+                    <a href="#" class="menu_link menu_link_iconed cart_menu">
+                        <span>Корзина</span>
+                        <span class="cart_total_nmb" id="cart_total_nmb">
+                            {% if products_total_nmb %}
+                                {{ products_total_nmb }}
+                                {% else %}
+                                    0
+                            {% endif %}
+                        </span>
+                    </a>
+                     <div class="cart">
+                     <ul class="cart_table_row">
+                         {% for product_in_cart in products_in_cart %}
+                         <li>
+                            <div class="cart_item">
+                                <div class="cart_name">{{ product_in_cart.product.name }}</div>
+                                <div class="cart_nmb">Колл-во: {{ product_in_cart.nmb }}</div>
+                                <div class="cart_item_price total_item_price_header" id="total_item_price_header">
+                                    {{ product_in_cart.total_price }} Rub
+                                </div>
+                                <div>
+                                    <a class="delete_item" href="#" data-product_id="{{ product_in_cart.id }}">X</a>
+{#                                    <div style="display:none">#}
+{#                                        <input type="hidden" name="csrfmiddlewaretoken" value="$csrf_token"/>#}
+{#                                    </div>#}
+                                </div>
+                            </div>
+                         </li>
+                         {% endfor %}
+                     </ul>
+                     <div class="cart_buy">
+                             <div class="cart_price"><span id="checkout_price_header"></span></div>
+                             <div class="cart_button"><a href="/checkout"><button class="submit">Оформить</button></a></div>
+                     </div>
+        </div>
+            <div class="check"></div>
+        </div>
+    </div>
+</header>

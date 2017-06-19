@@ -1,0 +1,31 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+    {% include "header.html" %}
+        <section class="section">
+        <form id="cart_form">
+            {% csrf_token %}
+        </form>
+                <div class="container">
+                    <main class="content">
+                        {% block content %}
+                        {% endblock %}
+                    </main>
+                </div>
+        </section>
+    <div class="clear"></div>
+    </div>
+    {% include "footer.html" %}
+</body>
+</html>

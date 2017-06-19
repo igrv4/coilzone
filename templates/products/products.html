@@ -1,0 +1,40 @@
+<head>
+    <title>Товары</title>
+</head>
+
+{% extends 'base.html' %}
+{%  load static %}
+
+
+
+{% block content %}
+    <ul class="product">
+        {% for item in products %}
+            <li class="product_item">
+                <div class="product_view">
+                    <img class="product_img" src="/{{ item.image.url }}">
+                </div>
+                <div class="product_desc">
+                    <h2 class="product_header">
+                        {{ item.product.name }}
+                    </h2>
+                    {{ item.product.description }}
+                </div>
+                <div class="product_price">
+                    {#сюда настройка койлов#}
+                    <a href="">
+                        <div class="price_wrap">
+                            <div class="price_amount">
+                                <span class="amount">{{ item.product.price }}</span>
+                                <span>RUB</span>
+                            </div>
+                            <div class="buy_button">
+                                <a href="{% url 'product' item.product.id %}">Buy!</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

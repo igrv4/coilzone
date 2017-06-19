@@ -1,0 +1,82 @@
+
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+    <div class="product_single">
+        <div class="product_view_single">
+            {% for image_item in product.productimage_set.all %}
+                <img class="product_img" src="/{{ image_item.image.url }}">
+            {% endfor %}
+        </div>
+        <div id="settings" class="settingsWindow">
+             <form class="action" method="post" id="settings_form" action="{% url 'cart_adding' %}">
+                 {% csrf_token %}
+
+                 <h2 class="product_header">
+                    {{ product.name }} <br>
+                    {{ product.price }}<span> Rub</span>
+                 </h2>
+                  <div class="top_area">
+                      <ul>
+                        <li>
+                            <div class="settings_block">
+                                    <span >Материал</span><br>
+                                    <input type="radio" name="veins" value="Kantal 0.4" checked="checked" />
+                                    <span>Kantal 0.4</span><br>
+                                    <input type="radio" name="veins" value="SS 0.4" />
+                                    <span>Stanless 0.4</span>
+                            </div>
+                        </li>
+                          <li>
+                            <div class="settings_block">
+                                    <span>Обмотка</span><br>
+                                    <input type="radio" name="winding" value="NiC 0.1" checked="checked">
+                                    <span>Nichrome 0.1</span><br>
+                                    <input type="radio" name="winding" value="NiC 0.2">
+                                    <span>Nichrome 0.2</span><br>
+
+                            </div>
+                          </li>
+                          <li>
+                            <div class="settings_block">
+                                    <label for="coil">Колличество витков</label>
+                                    <select id="coil" name="coil">
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                    </select>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="settings_block number">
+                                <label for="nmb">Колличество койлов</label>
+                                <select id="nmb" name="nmb">
+                                            <option>2</option>
+                                            <option>4</option>
+                                            <option>6</option>
+                                            <option>8</option>
+                                            <option>10</option>
+                                    </select>
+                            </div>
+                          </li>
+                   </ul>
+                </div>
+
+                <div class="button_area">
+                        <button class="submit" id="buy_button"
+                           data-product_id="{{ product.id }}" data-product_name="{{ product.name }}"
+                                data-product_price="{{ product.price }}">В корзину</button>
+
+                </div>
+            </form>
+        </div>
+        <div class="description">
+            <span class="description_head">Описание</span>
+            {{ product.description }}
+        </div>
+    </div>
+
+{% endblock %}

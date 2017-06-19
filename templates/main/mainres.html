@@ -1,0 +1,281 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+
+<body>
+    <div id="settings" class="settingsWindow">
+        <div class="window">
+            <div class="choise">
+                   <form class="action" action="" method="post"> {% csrf_token %}
+                              <div class="top_area">
+                                  <ul>
+                                    <li>
+                                        <div class="settings_block">
+                                                <label for="veins">Материал</label><br>
+                                                <input type="radio" name="veins" id="veins" value="Kantal 0.4">
+                                                <span>Kantal 0.4</span><br>
+                                                <input type="radio" name="veins" id="veins" value="SS 0.4">
+                                                <span>Stanless 0.4</span>
+                                        </div>
+                                    </li>
+                                      <li>
+                                        <div class="settings_block">
+                                                <label for="winding">Обмотка</label><br>
+                                                <input type="radio" name="winding" id="winding" value="NiC 0.1">
+                                                <span>Nichrome 0.1</span><br>
+                                                <input type="radio" name="winding" id="winding" value="NiC 0.2">
+                                                <span>Nichrome 0.2</span><br>
+
+                                        </div>
+                                      </li>
+                                      <li>
+                                        <div class="settings_block">
+                                                <label for="coil">Колличество витков</label>
+                                                <select id="coil" name="coil">
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                </select>
+                                        </div>
+                                      </li>
+                                      <li>
+                                        <div class="settings_block number">
+                                            <label for="num">Колличество койлов</label>
+                                            <select id="num" name="num">
+                                                        <option>2</option>
+                                                        <option>4</option>
+                                                        <option>6</option>
+                                                        <option>8</option>
+                                                        <option>10</option>
+                                                </select>
+                                        </div>
+                                      </li>
+                               </ul>
+                            </div>
+                            <div class="button_area">
+                                    <input class="submit"  type="submit" value="Заказать">
+                            </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container_head">
+                <div class="logo">
+                    <a href="#" class="href_logo">
+                        <div class="logotext">Coil</div>
+                        <div class="logotext">Zone</div>
+                    </a>
+                </div>
+                <div class="header_menu">
+                    <ul class="menu">
+                        <li class="menu_item">
+                            <a href="#" class="menu_link">
+                                <span>
+                                    Главная
+                                </span>
+                            </a>
+                        </li>
+                        <li class="menu_item ">
+                            <a href="#" class="menu_link click">
+                                <span>
+                                    Товары
+                                </span>
+                            </a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#" class="menu_link">
+                                <span>Ррасчет спиралей</span>
+                            </a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#" class="menu_link menu_link_iconed">
+                                <span>Корзина</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="check">
+
+                </div>
+            </div>
+        </header>
+            <section class="section">
+                <div class="container">
+                    <main class="content">
+                        <ul class="product">
+
+                            <li class="product_item">
+                                <div class="product_view">
+                                    <img class="product_img" src="../../static/coil.jpg">
+                                </div>
+                                <div class="product_desc">
+                                    <h2 class="product_header">
+                                        Fused Clapton
+                                    </h2>
+                                    <ul>
+                                        <li>
+                                            Колличество жил: 2
+                                        </li>
+                                        <li>
+                                            Платы: +
+                                        </li>
+                                        <li>
+                                            Мехмоды: +
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product_price">
+                                    <div class="price_wrap">
+                                        <div class="price_amount">
+                                            <span class="amount">80</span>
+                                            <span>RUB</span>
+                                        </div>
+                                        <div class="buy_button">
+                                            <a href="#settings">Buy!</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            <li class="product_item">
+                                <div class="product_view">
+                                    <img class="product_img" src="../../static/coil.jpg">
+                                </div>
+                                <div class="product_desc">
+                                    <h2 class="product_header">
+                                        Fused Clapton
+                                    </h2>
+                                    <ul>
+                                        <li>
+                                            Колличество жил: 2
+                                        </li>
+                                        <li>
+                                            Платы: +
+                                        </li>
+                                        <li>
+                                            Мехмоды: +
+                                        </li>
+                                         <li>
+                                            Дрипки: +
+                                        </li>
+                                         <li>
+                                            Баки: +
+                                         </li>
+
+                                    </ul>
+                                </div>
+                                <div class="product_price">
+                                    <div class="price_wrap">
+                                        <div class="price_amount">
+                                            <span class="amount">250</span>
+                                            <span>RUB</span>
+                                        </div>
+                                        <div class="buy_button">
+                                            <a href="#">Buy!</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <li class="product_item">
+                                <div class="product_view">
+                                    <img class="product_img" src="../../static/coil.jpg">
+                                </div>
+                                <div class="product_desc">
+                                    <h2 class="product_header">
+                                        Fused Clapton
+                                    </h2>
+                                    <ul>
+                                        <li>
+                                            Колличество жил: 2
+                                        </li>
+                                        <li>
+                                            Платы: +
+                                        </li>
+                                        <li>
+                                            Мехмоды: +
+                                        </li>
+                                         <li>
+                                            Дрипки: +
+                                        </li>
+                                         <li>
+                                            Баки: +
+                                         </li>
+
+                                    </ul>
+                                </div>
+                                <div class="product_price">
+                                    <div class="price_wrap">
+                                        <div class="price_amount">
+                                            <span class="amount">250</span>
+                                            <span>RUB</span>
+                                        </div>
+                                        <div class="buy_button">
+                                            <a href="#">Buy!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <li class="product_item">
+                                <div class="product_view">
+                                    <img class="product_img" src="../../static/coil.jpg">
+                                </div>
+                                <div class="product_desc">
+                                    <h2 class="product_header">
+                                        Fused Clapton
+                                    </h2>
+                                    <ul>
+                                        <li>
+                                            Колличество жил: 2
+                                        </li>
+                                        <li>
+                                            Платы: +
+                                        </li>
+                                        <li>
+                                            Мехмоды: +
+                                        </li>
+                                         <li>
+                                            Дрипки: +
+                                        </li>
+                                         <li>
+                                            Баки: +
+                                         </li>
+
+                                    </ul>
+                                </div>
+                                <div class="product_price">
+                                    <div class="price_wrap">
+                                        <div class="price_amount">
+                                            <span class="amount">250</span>
+                                            <span>RUB</span>
+                                        </div>
+                                        <div class="buy_button">
+                                            <a href="#">Buy!</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </ul>
+
+
+                    </main>
+
+
+                </div>
+            </section>
+    </div>
+    <div class="clear"></div>
+    <footer class="footer"> <div class="faddres">г.Санкт Петербург</div> <div class="fcz">Coil Zone</div></footer>
+</body >
+</html>

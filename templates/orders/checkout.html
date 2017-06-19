@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+{% block content %}
+    <div class="checkout">
+    <form method="POST">{% csrf_token %}
+        <ul class="checkout_description">
+            <li class="checkout_name">
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name">
+                <span>{{ form.customer_name.errors }}</span>
+            </li>
+            <li class="checkout_phone">
+                <label for="phone">Телефон</label>
+                <input type="text" name="phone" id="phone">
+                <span class="errors">{{ form.customer_phone.errors }}</span>
+
+            </li>
+            <li class="checkout_comment">
+                <label for="comment">Комментарий</label>
+                <textarea name="comment" id="comment"></textarea>
+            </li>
+        </ul>
+        <table class="checkout_table">
+            <thead>
+                <tr class="checkout_head">
+                    <th>Название</th>
+                    <th>Жилы</th>
+                    <th>Обмотка</th>
+                    <th>Витки</th>
+                    <th>Кол-во</th>
+                    <th>Цена, Руб</th>
+                </tr>
+            </thead>
+            <tbody>
+             {% for product_in_cart in products_in_cart %}
+                <tr class="checkout_item">
+                    <td>
+                        <span id="name">{{ product_in_cart.product.name }}</span>
+                    </td>
+                    <td>
+                        <span id="veins">{{ product_in_cart.veins }}</span>
+                    </td>
+                    <td>
+                        <span id="winding">{{ product_in_cart.winding }}</span>
+                    </td>
+                    <td>
+                        <span id="coil">{{ product_in_cart.coil }}</span>
+                    </td>
+                    <td>
+                        <span id="nmb" name>{{ product_in_cart.nmb }}</span>
+                    </td>
+                    <td>
+                        <span class="total_item_price" id="total_price">
+                        {{ product_in_cart.total_price }}
+                        </span>
+                    </td>
+                </tr>
+             {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="checkout_buy_area">
+            <div class="checkout_buy_area_price">
+                    <b>Cумма заказа: </b><span id="checkout_price"></span><b> руб.</b>
+            </div>
+            <button type="submit" class="submit checkout-submit">
+                Заказать
+            </button>
+        </div>
+    </form>
+    </div>
+{% endblock %}
