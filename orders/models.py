@@ -64,10 +64,9 @@ class ProductInOrder(models.Model):
         price_per_item = self.product.price
         self.price_per_item = price_per_item
         print(self.nmb)
-
         self.total_price = int(self.nmb) * price_per_item
-
         super(ProductInOrder, self).save(*args, **kwargs)
+
 
 
 class ProductInCart(models.Model):
@@ -96,6 +95,7 @@ class ProductInCart(models.Model):
         self.price_per_item = price_per_item
         self.total_price = int(self.nmb) * price_per_item
         super(ProductInCart, self).save(*args, **kwargs)
+
 
 
 def product_in_order_post_save(sender, instance, created, **kwargs):
