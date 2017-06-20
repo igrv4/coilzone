@@ -1,7 +1,7 @@
 
 @font-face {
         font-family: Carosello-Regular;
-        src: url(Carosello-Regular.ttf);
+        src: url(../font/Carosello-Regular.ttf);
 }
 
 html{
@@ -192,7 +192,7 @@ a{
     position: relative;
     border: 1px solid white;
     border-radius: 10px;
-    background: url(shoping.png) no-repeat 13px 8px;
+    background: url(../img/shoping.png) no-repeat 13px 8px;
 }
 
 .img_menu{

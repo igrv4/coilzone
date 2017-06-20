@@ -12,9 +12,7 @@ $(document).ready(function(){
             data.nmb = nmb;
             var csrf_token = $('#cart_form [name="csrfmiddlewaretoken"]').val();
             data["csrfmiddlewaretoken"] = csrf_token;
-            var url = form.attr("action");
-
-            console.log(data);
+            var url = /cart_adding/;
             $.ajax({
                 url: url,
                 type: 'POST',
@@ -25,12 +23,12 @@ $(document).ready(function(){
                         data.is_delete = true;
                         console.log("is_delete = ", is_delete);
                         console.log("csrf-delete = ", csrf_token);
+                        console.log("data.is_delete = ", data.is_delete)
                      }
                      else{
                         console.log("is_delete = ", is_delete);
                         console.log("csrf-add = ", csrf_token);
                      }
-                    console.log("data", data.is_delete);
                     console.log("prod tot nmb = ", data.products_total_nmb);
                     if (data.products_total_nmb || data.products_total_nmb == 0) {
                         $('#cart_total_nmb').text(data.products_total_nmb);
